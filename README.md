@@ -28,10 +28,14 @@ It consists of two sub-repositories: 1) [PatchTST](https://github.com/SamiHaddou
 The core of this repository, is the inference notebook "Hybrid_VARMA_Transformer.ipynb" which includes the EDA, training, evaluation and inference regarding the hybrid system. It was originally run in a Google Colab environment using a GPU.
 
 Parts of the source code were based on the documentation of the libraries used:
-- https://pandas.pydata.org/docs
-- https://numpy.org/doc
-- https://www.statsmodels.org/stable/
-- https://scikit-learn.org/stable/
+- https://pandas.pydata.org/docs (06.05.2023)
+- https://numpy.org/doc (06.05.2023)
+- https://www.statsmodels.org/stable/ (06.05.2023)
+- https://scikit-learn.org/stable/ (06.05.2023)
 
-Functions used for exploratory data analysis such as plotting the distributions of the columns, checking stationarity, and the implementation for the Cointegration and Augmented Dickey Fuller test, were derived from the following source and modified accordingly:
+Functions used for exploratory data analysis such as plotting the distributions of the columns, checking stationarity, and the implementation for the Cointegration, Augmented Dickey Fuller test and Grid Search, were derived from the following sources and modified accordingly:
 - https://michael-fuchs-python.netlify.app/2020/10/29/time-series-analysis-regression-extension-techniques-for-forecasting-multivariate-variables/#eda (06.05.2023)
+- https://github.com/Apress/hands-on-time-series-analylsis-python/blob/master/Chapter%204/8.%20VARMA%20with%20Gird%20Search.ipynb (06.05.2023)
+
+
+For a complete picture, draft notebooks, which include pre-assessments like differencing the time-series data or comparing the grid search function against pmdarima.auto_arima, are included. However, they are not directly relevant and therefore not really part of the scope of this work.
