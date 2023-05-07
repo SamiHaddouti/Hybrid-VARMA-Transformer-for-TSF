@@ -1,0 +1,49 @@
+Running Model with pred_len 24...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='ili_36_24', model='Pyraformer', data='custom', root_path='./dataset/illness/', data_path='national_illness_VARMA_Residuals.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=36, label_len=18, pred_len=24, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=8, dec_in=8, c_out=8, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ili_36_24_Pyraformer_custom_ftM_sl36_ll18_pl24_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 617
+val 74
+test 170
+Epoch: 1 cost time: 2.4788055419921875
+Epoch: 1, Steps: 19 | Train Loss: 0.7698184 Vali Loss: 0.4381039 Test Loss: 4.4860077
+Validation loss decreased (inf --> 0.438104).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 1.3748440742492676
+Epoch: 2, Steps: 19 | Train Loss: 0.5496058 Vali Loss: 0.3523724 Test Loss: 3.9489846
+Validation loss decreased (0.438104 --> 0.352372).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 1.332885503768921
+Epoch: 3, Steps: 19 | Train Loss: 0.4537179 Vali Loss: 0.3317293 Test Loss: 3.9066033
+Validation loss decreased (0.352372 --> 0.331729).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 1.325613260269165
+Epoch: 4, Steps: 19 | Train Loss: 0.4173853 Vali Loss: 0.3334584 Test Loss: 4.1304188
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 1.4401719570159912
+Epoch: 5, Steps: 19 | Train Loss: 0.4138111 Vali Loss: 0.3495308 Test Loss: 4.3309431
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 1.3599598407745361
+Epoch: 6, Steps: 19 | Train Loss: 0.4081652 Vali Loss: 0.3168910 Test Loss: 4.2124858
+Validation loss decreased (0.331729 --> 0.316891).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 1.3297300338745117
+Epoch: 7, Steps: 19 | Train Loss: 0.4040103 Vali Loss: 0.3192329 Test Loss: 4.2216573
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 1.327773094177246
+Epoch: 8, Steps: 19 | Train Loss: 0.4046989 Vali Loss: 0.3341796 Test Loss: 4.1685462
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 1.4246015548706055
+Epoch: 9, Steps: 19 | Train Loss: 0.4027347 Vali Loss: 0.3231491 Test Loss: 4.1737590
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ili_36_24_Pyraformer_custom_ftM_sl36_ll18_pl24_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 170
+test shape: (170, 1, 24, 8) (170, 1, 24, 8)
+test shape: (170, 24, 8) (170, 24, 8)
+mse:4.2124857902526855, mae:1.3597761392593384

@@ -1,0 +1,106 @@
+Args in experiment:
+Namespace(random_seed=2021, is_training=1, model_id='336_96', model='PatchTST', data='custom', root_path='./dataset/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=336, label_len=48, pred_len=96, fc_dropout=0.2, head_dropout=0.0, patch_len=16, stride=8, padding_patch='end', revin=1, affine=0, subtract_last=0, decomposition=0, kernel_size=25, individual=0, embed_type=0, enc_in=321, dec_in=7, c_out=7, d_model=128, n_heads=16, e_layers=3, d_layers=1, d_ff=256, moving_avg=25, factor=1, distil=True, dropout=0.2, embed='timeF', activation='gelu', output_attention=False, do_predict=False, num_workers=10, itr=1, train_epochs=100, batch_size=32, patience=10, learning_rate=0.0001, des='Exp', loss='mse', lradj='TST', pct_start=0.2, use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', test_flop=False)
+Use GPU: cuda:0
+>>>>>>>start training : 336_96_PatchTST_custom_ftM_sl336_ll48_pl96_dm128_nh16_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4880
+val 665
+test 1422
+	iters: 100, epoch: 1 | loss: 0.2706211
+	speed: 0.0453s/iter; left time: 683.5822s
+Epoch: 1 cost time: 6.407325029373169
+Epoch: 1, Steps: 152 | Train Loss: 0.2963424 Vali Loss: 0.1997911 Test Loss: 0.1473995
+Validation loss decreased (inf --> 0.199791).  Saving model ...
+Updating learning rate to 4.591347831932931e-06
+	iters: 100, epoch: 2 | loss: 0.1342649
+	speed: 0.0740s/iter; left time: 1105.6207s
+Epoch: 2 cost time: 5.7877397537231445
+Epoch: 2, Steps: 152 | Train Loss: 0.2013159 Vali Loss: 0.1733124 Test Loss: 0.1172239
+Validation loss decreased (0.199791 --> 0.173312).  Saving model ...
+Updating learning rate to 6.35082081696788e-06
+	iters: 100, epoch: 3 | loss: 0.1924103
+	speed: 0.0743s/iter; left time: 1099.2443s
+Epoch: 3 cost time: 5.709695100784302
+Epoch: 3, Steps: 152 | Train Loss: 0.1695083 Vali Loss: 0.1544994 Test Loss: 0.1005515
+Validation loss decreased (0.173312 --> 0.154499).  Saving model ...
+Updating learning rate to 9.235066432811335e-06
+	iters: 100, epoch: 4 | loss: 0.1280179
+	speed: 0.0730s/iter; left time: 1068.4657s
+Epoch: 4 cost time: 5.602388858795166
+Epoch: 4, Steps: 152 | Train Loss: 0.1481829 Vali Loss: 0.1435696 Test Loss: 0.0907155
+Validation loss decreased (0.154499 --> 0.143570).  Saving model ...
+Updating learning rate to 1.3173018329809463e-05
+	iters: 100, epoch: 5 | loss: 0.1395832
+	speed: 0.0719s/iter; left time: 1041.8659s
+Epoch: 5 cost time: 5.582371950149536
+Epoch: 5, Steps: 152 | Train Loss: 0.1366667 Vali Loss: 0.1363783 Test Loss: 0.0880568
+Validation loss decreased (0.143570 --> 0.136378).  Saving model ...
+Updating learning rate to 1.8067647369772875e-05
+	iters: 100, epoch: 6 | loss: 0.1447132
+	speed: 0.0716s/iter; left time: 1026.7106s
+Epoch: 6 cost time: 5.532305955886841
+Epoch: 6, Steps: 152 | Train Loss: 0.1288626 Vali Loss: 0.1311484 Test Loss: 0.0874361
+Validation loss decreased (0.136378 --> 0.131148).  Saving model ...
+Updating learning rate to 2.379835237474747e-05
+	iters: 100, epoch: 7 | loss: 0.1186311
+	speed: 0.0725s/iter; left time: 1028.6622s
+Epoch: 7 cost time: 5.540072202682495
+Epoch: 7, Steps: 152 | Train Loss: 0.1243564 Vali Loss: 0.1323866 Test Loss: 0.0876010
+EarlyStopping counter: 1 out of 10
+Updating learning rate to 3.022393167889412e-05
+	iters: 100, epoch: 8 | loss: 0.1102422
+	speed: 0.0704s/iter; left time: 988.2213s
+Epoch: 8 cost time: 5.493981122970581
+Epoch: 8, Steps: 152 | Train Loss: 0.1222058 Vali Loss: 0.1328371 Test Loss: 0.0876580
+EarlyStopping counter: 2 out of 10
+Updating learning rate to 3.718606226594531e-05
+	iters: 100, epoch: 9 | loss: 0.1070150
+	speed: 0.0713s/iter; left time: 990.3593s
+Epoch: 9 cost time: 5.4823994636535645
+Epoch: 9, Steps: 152 | Train Loss: 0.1192691 Vali Loss: 0.1350041 Test Loss: 0.0906015
+EarlyStopping counter: 3 out of 10
+Updating learning rate to 4.45132007680558e-05
+	iters: 100, epoch: 10 | loss: 0.1547606
+	speed: 0.0708s/iter; left time: 971.9629s
+Epoch: 10 cost time: 5.492578506469727
+Epoch: 10, Steps: 152 | Train Loss: 0.1184420 Vali Loss: 0.1399030 Test Loss: 0.0936154
+EarlyStopping counter: 4 out of 10
+Updating learning rate to 5.202481020741325e-05
+	iters: 100, epoch: 11 | loss: 0.1299184
+	speed: 0.0707s/iter; left time: 960.5317s
+Epoch: 11 cost time: 5.498805046081543
+Epoch: 11, Steps: 152 | Train Loss: 0.1166899 Vali Loss: 0.1363269 Test Loss: 0.0922318
+EarlyStopping counter: 5 out of 10
+Updating learning rate to 5.953580833583889e-05
+	iters: 100, epoch: 12 | loss: 0.1256041
+	speed: 0.0713s/iter; left time: 957.7479s
+Epoch: 12 cost time: 5.539047479629517
+Epoch: 12, Steps: 152 | Train Loss: 0.1152735 Vali Loss: 0.1430156 Test Loss: 0.0954307
+EarlyStopping counter: 6 out of 10
+Updating learning rate to 6.686112796754533e-05
+	iters: 100, epoch: 13 | loss: 0.1412427
+	speed: 0.0713s/iter; left time: 946.6713s
+Epoch: 13 cost time: 5.578176021575928
+Epoch: 13, Steps: 152 | Train Loss: 0.1143045 Vali Loss: 0.1494578 Test Loss: 0.0955304
+EarlyStopping counter: 7 out of 10
+Updating learning rate to 7.382027694076487e-05
+	iters: 100, epoch: 14 | loss: 0.1102473
+	speed: 0.0729s/iter; left time: 957.0715s
+Epoch: 14 cost time: 5.606539487838745
+Epoch: 14, Steps: 152 | Train Loss: 0.1126994 Vali Loss: 0.1515794 Test Loss: 0.0977282
+EarlyStopping counter: 8 out of 10
+Updating learning rate to 8.024178535310538e-05
+	iters: 100, epoch: 15 | loss: 0.1007239
+	speed: 0.0722s/iter; left time: 936.4462s
+Epoch: 15 cost time: 5.63513708114624
+Epoch: 15, Steps: 152 | Train Loss: 0.1107724 Vali Loss: 0.1675711 Test Loss: 0.1018687
+EarlyStopping counter: 9 out of 10
+Updating learning rate to 8.596743049300946e-05
+	iters: 100, epoch: 16 | loss: 0.1214781
+	speed: 0.0726s/iter; left time: 930.1954s
+Epoch: 16 cost time: 5.602573394775391
+Epoch: 16, Steps: 152 | Train Loss: 0.1088281 Vali Loss: 0.1598150 Test Loss: 0.1014431
+EarlyStopping counter: 10 out of 10
+Early stopping
+>>>>>>>testing : 336_96_PatchTST_custom_ftM_sl336_ll48_pl96_dm128_nh16_el3_dl1_df256_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1422
+mse:0.08743616193532944, mae:0.20723792910575867, rse:0.22521251440048218

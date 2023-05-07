@@ -1,0 +1,80 @@
+Running Model with pred_len 96...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='Exchange_96_96', model='FEDformer', data='custom', root_path='./dataset/exchange_rate/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=8, dec_in=8, c_out=8, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+fourier enhanced block used!
+modes=32, index=[2, 3, 4, 5, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 23, 25, 26, 28, 31, 32, 34, 35, 37, 38, 39, 40, 42, 43, 44, 46]
+fourier enhanced block used!
+modes=32, index=[0, 1, 2, 4, 5, 8, 10, 12, 13, 14, 16, 21, 22, 24, 26, 28, 29, 30, 34, 35, 37, 38, 42, 43, 45, 47, 56, 57, 58, 65, 70, 71]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[0, 8, 13, 14, 16, 17, 18, 19, 21, 22, 24, 28, 29, 33, 37, 40, 42, 43, 44, 47, 48, 50, 51, 53, 55, 56, 58, 60, 62, 63, 68, 69]
+modes_kv=32, index_kv=[0, 1, 2, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 20, 22, 24, 28, 30, 31, 32, 34, 35, 36, 37, 38, 39, 44, 45, 46, 47]
+>>>>>>>start training : long_term_forecast_Exchange_96_96_FEDformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5120
+val 665
+test 1422
+	iters: 100, epoch: 1 | loss: 0.1776819
+	speed: 0.3857s/iter; left time: 578.9828s
+Epoch: 1 cost time: 61.517077684402466
+Epoch: 1, Steps: 160 | Train Loss: 0.2488713 Vali Loss: 0.1983779 Test Loss: 0.1500670
+Validation loss decreased (inf --> 0.198378).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.1690108
+	speed: 1.5673s/iter; left time: 2101.7692s
+Epoch: 2 cost time: 61.25648379325867
+Epoch: 2, Steps: 160 | Train Loss: 0.2127824 Vali Loss: 0.2023378 Test Loss: 0.1596060
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.2190293
+	speed: 1.5643s/iter; left time: 1847.4116s
+Epoch: 3 cost time: 61.41887378692627
+Epoch: 3, Steps: 160 | Train Loss: 0.2082610 Vali Loss: 0.1986937 Test Loss: 0.1600721
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.1501357
+	speed: 1.5665s/iter; left time: 1599.4322s
+Epoch: 4 cost time: 61.4265193939209
+Epoch: 4, Steps: 160 | Train Loss: 0.2071177 Vali Loss: 0.1945095 Test Loss: 0.1541295
+Validation loss decreased (0.198378 --> 0.194509).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.1389968
+	speed: 1.5732s/iter; left time: 1354.4922s
+Epoch: 5 cost time: 61.482797622680664
+Epoch: 5, Steps: 160 | Train Loss: 0.2061495 Vali Loss: 0.1938704 Test Loss: 0.1544227
+Validation loss decreased (0.194509 --> 0.193870).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.1771632
+	speed: 1.5781s/iter; left time: 1106.2249s
+Epoch: 6 cost time: 61.62998127937317
+Epoch: 6, Steps: 160 | Train Loss: 0.2057544 Vali Loss: 0.1913900 Test Loss: 0.1584720
+Validation loss decreased (0.193870 --> 0.191390).  Saving model ...
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.1518727
+	speed: 1.5956s/iter; left time: 863.2013s
+Epoch: 7 cost time: 61.63994765281677
+Epoch: 7, Steps: 160 | Train Loss: 0.2054837 Vali Loss: 0.1926146 Test Loss: 0.1581260
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.1704680
+	speed: 1.5917s/iter; left time: 606.4249s
+Epoch: 8 cost time: 61.72884011268616
+Epoch: 8, Steps: 160 | Train Loss: 0.2051913 Vali Loss: 0.1911976 Test Loss: 0.1592039
+Validation loss decreased (0.191390 --> 0.191198).  Saving model ...
+Updating learning rate to 7.8125e-07
+	iters: 100, epoch: 9 | loss: 0.2242976
+	speed: 1.5909s/iter; left time: 351.5928s
+Epoch: 9 cost time: 61.74670767784119
+Epoch: 9, Steps: 160 | Train Loss: 0.2052886 Vali Loss: 0.1915757 Test Loss: 0.1587330
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.90625e-07
+	iters: 100, epoch: 10 | loss: 0.2066658
+	speed: 1.5945s/iter; left time: 97.2658s
+Epoch: 10 cost time: 61.871490478515625
+Epoch: 10, Steps: 160 | Train Loss: 0.2052910 Vali Loss: 0.1903671 Test Loss: 0.1586261
+Validation loss decreased (0.191198 --> 0.190367).  Saving model ...
+Updating learning rate to 1.953125e-07
+>>>>>>>testing : long_term_forecast_Exchange_96_96_FEDformer_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1422
+test shape: (1422, 1, 96, 8) (1422, 1, 96, 8)
+test shape: (1422, 96, 8) (1422, 96, 8)
+mse:0.15862609446048737, mae:0.28876450657844543

@@ -1,0 +1,63 @@
+
+Running Model with pred_len 720...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='Exchange_96_720', model='Pyraformer', data='custom', root_path='./dataset/exchange_rate/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=720, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=8, dec_in=8, c_out=8, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_Exchange_96_720_Pyraformer_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4496
+val 41
+test 798
+	iters: 100, epoch: 1 | loss: 0.1973364
+	speed: 0.0809s/iter; left time: 105.1883s
+Epoch: 1 cost time: 10.881883144378662
+Epoch: 1, Steps: 140 | Train Loss: 0.2842706 Vali Loss: 4.0311613 Test Loss: 2.0514112
+Validation loss decreased (inf --> 4.031161).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.0944694
+	speed: 0.1562s/iter; left time: 181.3896s
+Epoch: 2 cost time: 9.878594636917114
+Epoch: 2, Steps: 140 | Train Loss: 0.1074950 Vali Loss: 4.1667428 Test Loss: 1.9155923
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.0746818
+	speed: 0.1554s/iter; left time: 158.6465s
+Epoch: 3 cost time: 9.968098640441895
+Epoch: 3, Steps: 140 | Train Loss: 0.0796879 Vali Loss: 3.9231079 Test Loss: 1.8319135
+Validation loss decreased (4.031161 --> 3.923108).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.0642648
+	speed: 0.1608s/iter; left time: 141.6354s
+Epoch: 4 cost time: 9.98626708984375
+Epoch: 4, Steps: 140 | Train Loss: 0.0718940 Vali Loss: 3.9885342 Test Loss: 1.9204903
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.0589703
+	speed: 0.1586s/iter; left time: 117.5540s
+Epoch: 5 cost time: 9.999069690704346
+Epoch: 5, Steps: 140 | Train Loss: 0.0679843 Vali Loss: 3.8896158 Test Loss: 1.8689656
+Validation loss decreased (3.923108 --> 3.889616).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.0627182
+	speed: 0.1612s/iter; left time: 96.8909s
+Epoch: 6 cost time: 10.113101243972778
+Epoch: 6, Steps: 140 | Train Loss: 0.0670253 Vali Loss: 3.9248543 Test Loss: 1.8722281
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.0579755
+	speed: 0.1580s/iter; left time: 72.8610s
+Epoch: 7 cost time: 10.229002237319946
+Epoch: 7, Steps: 140 | Train Loss: 0.0648758 Vali Loss: 3.9633973 Test Loss: 1.9073141
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.0628767
+	speed: 0.1576s/iter; left time: 50.5862s
+Epoch: 8 cost time: 10.207476139068604
+Epoch: 8, Steps: 140 | Train Loss: 0.0644595 Vali Loss: 3.8965099 Test Loss: 1.8740090
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_720_Pyraformer_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 798
+test shape: (798, 1, 720, 8) (798, 1, 720, 8)
+test shape: (798, 720, 8) (798, 720, 8)
+mse:1.8689653873443604, mae:1.0816738605499268
+

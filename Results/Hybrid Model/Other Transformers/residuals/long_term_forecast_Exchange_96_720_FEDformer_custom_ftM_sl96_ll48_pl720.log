@@ -1,0 +1,51 @@
+Running Model with pred_len 720...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='Exchange_96_720', model='FEDformer', data='custom', root_path='./dataset/exchange_rate/', data_path='exchange_rate_VARMA_Residuals.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=720, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=9, dec_in=9, c_out=9, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+fourier enhanced block used!
+modes=32, index=[2, 3, 4, 5, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 23, 25, 26, 28, 31, 32, 34, 35, 37, 38, 39, 40, 42, 43, 44, 46]
+fourier enhanced block used!
+modes=32, index=[13, 34, 35, 46, 50, 95, 108, 124, 125, 129, 134, 137, 139, 140, 150, 161, 169, 211, 242, 251, 261, 263, 270, 271, 297, 307, 313, 317, 321, 347, 351, 381]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[8, 9, 16, 18, 40, 61, 62, 74, 93, 95, 99, 137, 148, 166, 172, 174, 191, 221, 222, 235, 273, 277, 299, 305, 308, 318, 320, 333, 353, 355, 369, 381]
+modes_kv=32, index_kv=[0, 1, 2, 6, 9, 10, 12, 14, 15, 16, 17, 19, 20, 23, 24, 27, 28, 29, 33, 34, 35, 36, 37, 38, 39, 40, 41, 43, 44, 45, 46, 47]
+>>>>>>>start training : long_term_forecast_Exchange_96_720_FEDformer_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4496
+val 41
+test 798
+	iters: 100, epoch: 1 | loss: 0.8600868
+	speed: 0.7840s/iter; left time: 1020.0486s
+Epoch: 1 cost time: 110.21776676177979
+Epoch: 1, Steps: 140 | Train Loss: 0.9294537 Vali Loss: 1.0467603 Test Loss: 1.1657670
+Validation loss decreased (inf --> 1.046760).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.9694298
+	speed: 1.6885s/iter; left time: 1960.3289s
+Epoch: 2 cost time: 109.54468154907227
+Epoch: 2, Steps: 140 | Train Loss: 0.8729265 Vali Loss: 1.0445596 Test Loss: 1.1661931
+Validation loss decreased (1.046760 --> 1.044560).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.8693832
+	speed: 1.6936s/iter; left time: 1729.1439s
+Epoch: 3 cost time: 109.62900352478027
+Epoch: 3, Steps: 140 | Train Loss: 0.8718199 Vali Loss: 1.1983007 Test Loss: 1.0274874
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.8210750
+	speed: 1.6850s/iter; left time: 1484.4913s
+Epoch: 4 cost time: 109.43354868888855
+Epoch: 4, Steps: 140 | Train Loss: 0.8703037 Vali Loss: 1.0855839 Test Loss: 1.1283311
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.8396420
+	speed: 1.6813s/iter; left time: 1245.8476s
+Epoch: 5 cost time: 109.48027896881104
+Epoch: 5, Steps: 140 | Train Loss: 0.8693836 Vali Loss: 1.1036057 Test Loss: 1.1111208
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_720_FEDformer_custom_ftM_sl96_ll48_pl720_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 798
+test shape: (798, 1, 720, 9) (798, 1, 720, 9)
+test shape: (798, 720, 9) (798, 720, 9)
+mse:1.1661921739578247, mae:0.8204452991485596
+

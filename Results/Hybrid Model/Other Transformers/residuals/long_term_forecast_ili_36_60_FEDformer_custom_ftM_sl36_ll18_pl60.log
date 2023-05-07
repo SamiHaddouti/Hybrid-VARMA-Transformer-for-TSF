@@ -1,0 +1,56 @@
+Running Model with pred_len 60...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='ili_36_60', model='FEDformer', data='custom', root_path='./dataset/illness/', data_path='national_illness_VARMA_Residuals.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=36, label_len=18, pred_len=60, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=8, dec_in=8, c_out=8, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+fourier enhanced block used!
+modes=32, index=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+fourier enhanced block used!
+modes=32, index=[0, 1, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23, 24, 25, 27, 28, 30, 31, 32, 33, 34, 36, 38]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 26, 28, 29, 30, 31, 32, 33, 34, 35, 37, 38]
+modes_kv=18, index_kv=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+>>>>>>>start training : long_term_forecast_ili_36_60_FEDformer_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 581
+val 38
+test 134
+Epoch: 1 cost time: 5.716135025024414
+Epoch: 1, Steps: 18 | Train Loss: 1.0633400 Vali Loss: 0.7429139 Test Loss: 3.7293479
+Validation loss decreased (inf --> 0.742914).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 4.713801860809326
+Epoch: 2, Steps: 18 | Train Loss: 0.8856484 Vali Loss: 0.6543350 Test Loss: 3.4287908
+Validation loss decreased (0.742914 --> 0.654335).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 4.8161234855651855
+Epoch: 3, Steps: 18 | Train Loss: 0.7958383 Vali Loss: 0.5860059 Test Loss: 3.2394278
+Validation loss decreased (0.654335 --> 0.586006).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 4.778645277023315
+Epoch: 4, Steps: 18 | Train Loss: 0.7491573 Vali Loss: 0.5457909 Test Loss: 3.1349313
+Validation loss decreased (0.586006 --> 0.545791).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 4.772779941558838
+Epoch: 5, Steps: 18 | Train Loss: 0.7288388 Vali Loss: 0.5157376 Test Loss: 3.0849552
+Validation loss decreased (0.545791 --> 0.515738).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 4.727620363235474
+Epoch: 6, Steps: 18 | Train Loss: 0.7202230 Vali Loss: 0.5094244 Test Loss: 3.0634530
+Validation loss decreased (0.515738 --> 0.509424).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 4.740010738372803
+Epoch: 7, Steps: 18 | Train Loss: 0.7159239 Vali Loss: 0.5167137 Test Loss: 3.0469480
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 4.757313966751099
+Epoch: 8, Steps: 18 | Train Loss: 0.7153298 Vali Loss: 0.5175665 Test Loss: 3.0422719
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 4.640869140625
+Epoch: 9, Steps: 18 | Train Loss: 0.7041169 Vali Loss: 0.5160768 Test Loss: 3.0398903
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ili_36_60_FEDformer_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 134
+test shape: (134, 1, 60, 8) (134, 1, 60, 8)
+test shape: (134, 60, 8) (134, 60, 8)
+mse:3.06345272064209, mae:1.2024630308151245

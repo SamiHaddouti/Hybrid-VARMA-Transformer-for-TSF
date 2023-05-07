@@ -1,0 +1,67 @@
+Running Model with pred_len 336...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='Exchange_96_336', model='Pyraformer', data='custom', root_path='./dataset/exchange_rate/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=8, dec_in=8, c_out=8, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_Exchange_96_336_Pyraformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4880
+val 425
+test 1182
+	iters: 100, epoch: 1 | loss: 0.1507013
+	speed: 0.0808s/iter; left time: 114.8047s
+Epoch: 1 cost time: 11.77836799621582
+Epoch: 1, Steps: 152 | Train Loss: 0.2411251 Vali Loss: 1.9567828 Test Loss: 1.2982569
+Validation loss decreased (inf --> 1.956783).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.0889857
+	speed: 0.1894s/iter; left time: 240.3444s
+Epoch: 2 cost time: 11.082772254943848
+Epoch: 2, Steps: 152 | Train Loss: 0.0976645 Vali Loss: 1.8443564 Test Loss: 1.2427367
+Validation loss decreased (1.956783 --> 1.844356).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.0711225
+	speed: 0.1909s/iter; left time: 213.2622s
+Epoch: 3 cost time: 11.187368392944336
+Epoch: 3, Steps: 152 | Train Loss: 0.0714457 Vali Loss: 1.8575124 Test Loss: 1.2327650
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.0672603
+	speed: 0.1868s/iter; left time: 180.2922s
+Epoch: 4 cost time: 11.135664701461792
+Epoch: 4, Steps: 152 | Train Loss: 0.0646822 Vali Loss: 1.8118833 Test Loss: 1.2130724
+Validation loss decreased (1.844356 --> 1.811883).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.0670413
+	speed: 0.1877s/iter; left time: 152.6211s
+Epoch: 5 cost time: 11.011998891830444
+Epoch: 5, Steps: 152 | Train Loss: 0.0608197 Vali Loss: 1.7883852 Test Loss: 1.1862605
+Validation loss decreased (1.811883 --> 1.788385).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.0613856
+	speed: 0.1900s/iter; left time: 125.6030s
+Epoch: 6 cost time: 11.06903338432312
+Epoch: 6, Steps: 152 | Train Loss: 0.0592967 Vali Loss: 1.7658584 Test Loss: 1.1695863
+Validation loss decreased (1.788385 --> 1.765858).  Saving model ...
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.0574642
+	speed: 0.1892s/iter; left time: 96.3123s
+Epoch: 7 cost time: 11.198046445846558
+Epoch: 7, Steps: 152 | Train Loss: 0.0578209 Vali Loss: 1.8150926 Test Loss: 1.2250483
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.0610601
+	speed: 0.1870s/iter; left time: 66.7558s
+Epoch: 8 cost time: 11.156839609146118
+Epoch: 8, Steps: 152 | Train Loss: 0.0580062 Vali Loss: 1.7985159 Test Loss: 1.2229680
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 7.8125e-07
+	iters: 100, epoch: 9 | loss: 0.0674344
+	speed: 0.1907s/iter; left time: 39.1002s
+Epoch: 9 cost time: 11.056126594543457
+Epoch: 9, Steps: 152 | Train Loss: 0.0570001 Vali Loss: 1.7720959 Test Loss: 1.1936028
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_336_Pyraformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1182
+test shape: (1182, 1, 336, 8) (1182, 1, 336, 8)
+test shape: (1182, 336, 8) (1182, 336, 8)
+mse:1.1695857048034668, mae:0.8476778864860535

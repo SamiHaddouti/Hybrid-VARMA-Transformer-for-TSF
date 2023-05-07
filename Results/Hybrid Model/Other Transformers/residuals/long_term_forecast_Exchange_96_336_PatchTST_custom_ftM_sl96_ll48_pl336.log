@@ -1,0 +1,49 @@
+Running Model with pred_len 336...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='Exchange_96_336', model='PatchTST', data='custom', root_path='./dataset/exchange_rate/', data_path='exchange_rate_VARMA_Residuals.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=9, dec_in=9, c_out=9, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_Exchange_96_336_PatchTST_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4880
+val 425
+test 1182
+	iters: 100, epoch: 1 | loss: 0.4431836
+	speed: 0.0734s/iter; left time: 104.2985s
+Epoch: 1 cost time: 10.544448852539062
+Epoch: 1, Steps: 152 | Train Loss: 0.5173357 Vali Loss: 0.5352653 Test Loss: 0.4171435
+Validation loss decreased (inf --> 0.535265).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.5322520
+	speed: 0.1665s/iter; left time: 211.3453s
+Epoch: 2 cost time: 9.832242965698242
+Epoch: 2, Steps: 152 | Train Loss: 0.5013657 Vali Loss: 0.5402966 Test Loss: 0.4105556
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.5148183
+	speed: 0.1644s/iter; left time: 183.6325s
+Epoch: 3 cost time: 9.518921375274658
+Epoch: 3, Steps: 152 | Train Loss: 0.4939113 Vali Loss: 0.5346451 Test Loss: 0.4190625
+Validation loss decreased (0.535265 --> 0.534645).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.5539153
+	speed: 0.1618s/iter; left time: 156.0908s
+Epoch: 4 cost time: 9.161219358444214
+Epoch: 4, Steps: 152 | Train Loss: 0.4909778 Vali Loss: 0.5361223 Test Loss: 0.4133967
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.4785506
+	speed: 0.1567s/iter; left time: 127.4339s
+Epoch: 5 cost time: 9.170254468917847
+Epoch: 5, Steps: 152 | Train Loss: 0.4891546 Vali Loss: 0.5415713 Test Loss: 0.4088856
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.4120821
+	speed: 0.1595s/iter; left time: 105.4597s
+Epoch: 6 cost time: 9.473148584365845
+Epoch: 6, Steps: 152 | Train Loss: 0.4883880 Vali Loss: 0.5348580 Test Loss: 0.4184613
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_336_PatchTST_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1182
+test shape: (1182, 1, 336, 9) (1182, 1, 336, 9)
+test shape: (1182, 336, 9) (1182, 336, 9)
+mse:0.41906285285949707, mae:0.45027709007263184

@@ -1,0 +1,62 @@
+Running Model with pred_len 192...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='Exchange_96_192', model='FEDformer', data='custom', root_path='./dataset/exchange_rate/', data_path='exchange_rate_VARMA_Residuals.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=9, dec_in=9, c_out=9, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+fourier enhanced block used!
+modes=32, index=[2, 3, 4, 5, 8, 9, 10, 11, 13, 14, 15, 16, 17, 18, 19, 20, 23, 25, 26, 28, 31, 32, 34, 35, 37, 38, 39, 40, 42, 43, 44, 46]
+fourier enhanced block used!
+modes=32, index=[0, 2, 6, 8, 10, 13, 14, 21, 22, 23, 28, 34, 35, 36, 42, 44, 45, 52, 55, 64, 66, 67, 68, 69, 72, 73, 83, 93, 98, 115, 117, 119]
+ fourier enhanced cross attention used!
+modes_q=32, index_q=[1, 5, 8, 12, 15, 20, 22, 26, 28, 30, 31, 36, 37, 46, 48, 55, 63, 64, 66, 77, 78, 81, 82, 85, 88, 90, 91, 94, 97, 99, 106, 107]
+modes_kv=32, index_kv=[0, 1, 4, 6, 7, 11, 12, 13, 14, 17, 18, 19, 23, 24, 25, 26, 27, 28, 29, 31, 32, 33, 34, 35, 37, 38, 39, 40, 43, 44, 45, 46]
+>>>>>>>start training : long_term_forecast_Exchange_96_192_FEDformer_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 5024
+val 569
+test 1326
+	iters: 100, epoch: 1 | loss: 0.4408705
+	speed: 0.4469s/iter; left time: 657.3170s
+Epoch: 1 cost time: 69.68159914016724
+Epoch: 1, Steps: 157 | Train Loss: 0.4437369 Vali Loss: 0.4586080 Test Loss: 0.3562161
+Validation loss decreased (inf --> 0.458608).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.4300083
+	speed: 1.6743s/iter; left time: 2200.0128s
+Epoch: 2 cost time: 68.62240362167358
+Epoch: 2, Steps: 157 | Train Loss: 0.4042500 Vali Loss: 0.4832017 Test Loss: 0.3580638
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.4274565
+	speed: 1.6753s/iter; left time: 1938.2684s
+Epoch: 3 cost time: 68.81793141365051
+Epoch: 3, Steps: 157 | Train Loss: 0.3990973 Vali Loss: 0.4410808 Test Loss: 0.3744027
+Validation loss decreased (0.458608 --> 0.441081).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.3610117
+	speed: 1.6874s/iter; left time: 1687.3872s
+Epoch: 4 cost time: 68.55124568939209
+Epoch: 4, Steps: 157 | Train Loss: 0.3970244 Vali Loss: 0.4383397 Test Loss: 0.3807906
+Validation loss decreased (0.441081 --> 0.438340).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.4764250
+	speed: 1.6631s/iter; left time: 1401.9979s
+Epoch: 5 cost time: 68.64812088012695
+Epoch: 5, Steps: 157 | Train Loss: 0.3959927 Vali Loss: 0.4501298 Test Loss: 0.3648730
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.4547711
+	speed: 1.6563s/iter; left time: 1136.2194s
+Epoch: 6 cost time: 68.45863389968872
+Epoch: 6, Steps: 157 | Train Loss: 0.3953764 Vali Loss: 0.4487918 Test Loss: 0.3678451
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.4351656
+	speed: 1.6594s/iter; left time: 877.8160s
+Epoch: 7 cost time: 68.47007155418396
+Epoch: 7, Steps: 157 | Train Loss: 0.3952049 Vali Loss: 0.4499631 Test Loss: 0.3678971
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_192_FEDformer_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1326
+test shape: (1326, 1, 192, 9) (1326, 1, 192, 9)
+test shape: (1326, 192, 9) (1326, 192, 9)
+mse:0.380790650844574, mae:0.4254871904850006

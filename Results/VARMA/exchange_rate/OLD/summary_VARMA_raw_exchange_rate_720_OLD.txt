@@ -1,0 +1,6 @@
+VARMA:
+ data=exchange_rate 
+ pred_len=720 
+ order=[3.0, 1.0] 
+ mae=0.059493905528733425 
+ mse=0.010993318673656811

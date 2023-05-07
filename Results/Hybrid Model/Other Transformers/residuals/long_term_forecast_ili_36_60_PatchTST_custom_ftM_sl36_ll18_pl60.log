@@ -1,0 +1,41 @@
+Running Model with pred_len 60...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='ili_36_60', model='PatchTST', data='custom', root_path='./dataset/illness/', data_path='national_illness_VARMA_Residuals.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=36, label_len=18, pred_len=60, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=8, dec_in=8, c_out=8, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_ili_36_60_PatchTST_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 581
+val 38
+test 134
+Epoch: 1 cost time: 1.9829118251800537
+Epoch: 1, Steps: 18 | Train Loss: 0.8940709 Vali Loss: 0.5131071 Test Loss: 2.6711822
+Validation loss decreased (inf --> 0.513107).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 1.1419739723205566
+Epoch: 2, Steps: 18 | Train Loss: 0.7753165 Vali Loss: 0.4894429 Test Loss: 2.5346394
+Validation loss decreased (0.513107 --> 0.489443).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 1.1106922626495361
+Epoch: 3, Steps: 18 | Train Loss: 0.7365929 Vali Loss: 0.4604877 Test Loss: 2.4810624
+Validation loss decreased (0.489443 --> 0.460488).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 1.184983491897583
+Epoch: 4, Steps: 18 | Train Loss: 0.7208786 Vali Loss: 0.4353024 Test Loss: 2.4890542
+Validation loss decreased (0.460488 --> 0.435302).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 1.1960608959197998
+Epoch: 5, Steps: 18 | Train Loss: 0.7177041 Vali Loss: 0.4459093 Test Loss: 2.4551823
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 1.1073074340820312
+Epoch: 6, Steps: 18 | Train Loss: 0.7108504 Vali Loss: 0.4444804 Test Loss: 2.4473634
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 1.0582549571990967
+Epoch: 7, Steps: 18 | Train Loss: 0.7107934 Vali Loss: 0.4506007 Test Loss: 2.4393132
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_ili_36_60_PatchTST_custom_ftM_sl36_ll18_pl60_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 134
+test shape: (134, 1, 60, 8) (134, 1, 60, 8)
+test shape: (134, 60, 8) (134, 60, 8)
+mse:2.4890542030334473, mae:1.0297828912734985

@@ -1,0 +1,6 @@
+VARMA:
+ data=national_illness 
+ pred_len=60 
+ order=[3.0, 1.0] 
+ mae=43213.904198765405 
+ mse=14571948019.028784

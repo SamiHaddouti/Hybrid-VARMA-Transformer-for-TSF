@@ -1,0 +1,61 @@
+Running Model with pred_len 336...
+Args in experiment:
+Namespace(task_name='long_term_forecast', is_training=1, model_id='Exchange_96_336', model='Crossformer', data='custom', root_path='./dataset/exchange_rate/', data_path='exchange_rate.csv', features='M', target='OT', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, seasonal_patterns='Monthly', mask_rate=0.25, anomaly_ratio=0.25, top_k=5, num_kernels=6, enc_in=8, dec_in=8, c_out=8, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.1, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=10, batch_size=32, patience=3, learning_rate=0.0001, des='Exp', loss='MSE', lradj='type1', use_amp=False, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_Exchange_96_336_Crossformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 4880
+val 425
+test 1182
+	iters: 100, epoch: 1 | loss: 0.3366578
+	speed: 0.4768s/iter; left time: 677.5464s
+Epoch: 1 cost time: 70.87510704994202
+Epoch: 1, Steps: 152 | Train Loss: 0.4002657 Vali Loss: 2.6068623 Test Loss: 1.1366169
+Validation loss decreased (inf --> 2.606862).  Saving model ...
+Updating learning rate to 0.0001
+	iters: 100, epoch: 2 | loss: 0.1291246
+	speed: 0.9618s/iter; left time: 1220.5387s
+Epoch: 2 cost time: 69.66180086135864
+Epoch: 2, Steps: 152 | Train Loss: 0.1606107 Vali Loss: 2.0810361 Test Loss: 1.1214334
+Validation loss decreased (2.606862 --> 2.081036).  Saving model ...
+Updating learning rate to 5e-05
+	iters: 100, epoch: 3 | loss: 0.0816201
+	speed: 0.9630s/iter; left time: 1075.6521s
+Epoch: 3 cost time: 69.52688503265381
+Epoch: 3, Steps: 152 | Train Loss: 0.1039149 Vali Loss: 1.3762017 Test Loss: 1.1853362
+Validation loss decreased (2.081036 --> 1.376202).  Saving model ...
+Updating learning rate to 2.5e-05
+	iters: 100, epoch: 4 | loss: 0.0750472
+	speed: 0.9643s/iter; left time: 930.5509s
+Epoch: 4 cost time: 69.59402227401733
+Epoch: 4, Steps: 152 | Train Loss: 0.0870923 Vali Loss: 1.2974770 Test Loss: 1.0910785
+Validation loss decreased (1.376202 --> 1.297477).  Saving model ...
+Updating learning rate to 1.25e-05
+	iters: 100, epoch: 5 | loss: 0.0878526
+	speed: 0.9649s/iter; left time: 784.4940s
+Epoch: 5 cost time: 69.70314288139343
+Epoch: 5, Steps: 152 | Train Loss: 0.0788630 Vali Loss: 1.2562592 Test Loss: 1.0876756
+Validation loss decreased (1.297477 --> 1.256259).  Saving model ...
+Updating learning rate to 6.25e-06
+	iters: 100, epoch: 6 | loss: 0.0942359
+	speed: 0.9638s/iter; left time: 637.0660s
+Epoch: 6 cost time: 69.73271822929382
+Epoch: 6, Steps: 152 | Train Loss: 0.0746909 Vali Loss: 1.3110269 Test Loss: 1.1227666
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 3.125e-06
+	iters: 100, epoch: 7 | loss: 0.0686678
+	speed: 0.9589s/iter; left time: 488.0649s
+Epoch: 7 cost time: 69.53584742546082
+Epoch: 7, Steps: 152 | Train Loss: 0.0729499 Vali Loss: 1.3725168 Test Loss: 1.1331736
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 1.5625e-06
+	iters: 100, epoch: 8 | loss: 0.0729230
+	speed: 0.9614s/iter; left time: 343.2267s
+Epoch: 8 cost time: 69.63706946372986
+Epoch: 8, Steps: 152 | Train Loss: 0.0720007 Vali Loss: 1.3512582 Test Loss: 1.1191987
+EarlyStopping counter: 3 out of 3
+Early stopping
+>>>>>>>testing : long_term_forecast_Exchange_96_336_Crossformer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 1182
+test shape: (1182, 1, 336, 8) (1182, 1, 336, 8)
+test shape: (1182, 336, 8) (1182, 336, 8)
+mse:1.087675929069519, mae:0.822612464427948
